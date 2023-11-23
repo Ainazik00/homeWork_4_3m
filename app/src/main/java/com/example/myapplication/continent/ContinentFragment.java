@@ -1,4 +1,4 @@
-package com.example.myapplication.CONTINENT;
+package com.example.myapplication.continent;
 
 import android.os.Bundle;
 
@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.myapplication.COUNTRY.CountryFragment;
+import com.example.myapplication.country.CountryFragment;
 import com.example.myapplication.OnClick;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentContinentBinding;
@@ -32,9 +32,13 @@ public class ContinentFragment extends Fragment implements OnClick {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loadData();
+        initAdapter();
+
+    }
+
+    private void initAdapter() {
         ContinentAdapter continentAdapter = new ContinentAdapter(continentList, this);
         binding.recyclerView.setAdapter(continentAdapter);
-
     }
 
     private void loadData() {
@@ -48,7 +52,7 @@ public class ContinentFragment extends Fragment implements OnClick {
     @Override
     public void onClick(int position) {
         Bundle bundle = new Bundle();
-        bundle.putInt("key", position);
+        bundle.putInt("keyForPosition", position);
         CountryFragment countryFragment = new CountryFragment();
         countryFragment.setArguments(bundle);
         requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, countryFragment).addToBackStack(null).commit();

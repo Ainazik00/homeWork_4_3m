@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.myapplication.CONTINENT.ContinentFragment;
+import com.example.myapplication.continent.ContinentFragment;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.myapplication.CONTINENT;
+package com.example.myapplication.continent;
 
 public class ContinentModel {
     private String img;
